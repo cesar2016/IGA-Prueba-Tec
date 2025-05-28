@@ -1,0 +1,77 @@
+
+version: '3.8'
+
+services:
+  db_1:
+    image: mysql:latest
+    container_name: my_1_db
+    #env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: defult_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin1234
+    volumes:
+     - ./data/pg_data:/var/lib/postgresql/data
+    ports:
+     - 3308:3306
+    healthcheck:
+     test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+     interval: 10s
+     timeout: 5s
+     retries: 5
+    networks:
+    - my_1_network
+  
+  phpmyadmin_1:
+    image: phpmyadmin/phpmyadmin:latest 
+    container_name: my_1_phpmyadmin  
+    depends_on:
+      - db_1  
+    ports:
+      - "9300:80"  
+    environment:       
+      PMA_HOST: my_1_db  
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root       
+      # PMA_USER: ${DB_USERNAME:-user} # Opcional: Si quieres que phpMyAdmin use un usuario específico para iniciar sesión
+      # PMA_PASSWORD: ${DB_PASSWORD:-password} # Opcional: Contraseña para el usuario PMA_USER
+    networks:
+        - my_1_network
+
+  front_1:
+    build:  
+      context: ./front  
+      dockerfile: Dockerfile  
+    container_name: my_1_front
+    working_dir: /app
+    command: "npm run dev"
+    volumes:
+      - ./front:/app  
+      - /app/node_modules
+    ports:
+      - 3002:3000
+    depends_on:
+      - db_1
+    networks:
+      - my_1_network
+  back_1:
+    image: api
+    container_name: my_1_back
+    
+    build: ./api
+    working_dir: /var/www/
+    volumes:
+      - ./api:/var/www/
+      - ./api/public/:/var/www/html/
+    ports: 
+      - 9200:80
+    depends_on:
+      - db_1
+    networks:
+      - my_1_network
+  
+
+networks:
+  my_1_network:
+    driver: bridge
