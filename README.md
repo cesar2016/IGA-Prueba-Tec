@@ -16,6 +16,9 @@
     sudo chmod -R 777 storage/
     php artisan key:generate    
 
+    // Con los contenedores levantados, ejecutar
+    docker exec my_1_back composer install
+
 # 3 Ingresar desde el navegador
     Frontend: http://localhost:3001
     backend: http://localhost:9200/api
