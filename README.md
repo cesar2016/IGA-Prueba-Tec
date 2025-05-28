@@ -8,21 +8,20 @@
     URL: https://github.com/cesar2016/Docker_Laravel_React_MySQL_and_phpmyadmin
 
 # 2 desde la raiz ejecutar
-    docker-compose up -d     #levanta todos los contenedores
+    sudo docker-compose up -d #levanta todos los contenedores
 
     // Dentro de api
     cd api && cp .env.example .env #habilita las variables de entorno
     sudo chmod -R 777 bootstrap/
     sudo chmod -R 777 storage/
-    php artisan key:generate
-    docker exec my_1_back sh -c "composer install && php artisan migrate" #Dependencias y migraciones
+    php artisan key:generate    
 
 # 3 Ingresar desde el navegador
     Frontend: http://localhost:3001
-    backend: http://localhost:8200
+    backend: http://localhost:9200/api
 
     
-    phpmyadmin: http://localhost:8300
+    phpmyadmin: http://localhost:9300
         user: admin
         password: admin1234
 
@@ -51,7 +50,6 @@
 
 
         
-
 
 
 

@@ -1,18 +1,17 @@
-
 version: '3.8'
 
 services:
   db_1:
     image: mysql:latest
     container_name: my_1_db
-    #env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: defult_db
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin1234
     volumes:
-     - ./data/pg_data:/var/lib/postgresql/data
+     - ./data/pg_data:/var/lib/mysql 
+     - ./init_db:/docker-entrypoint-initdb.d/
     ports:
      - 3308:3306
     healthcheck:
@@ -34,8 +33,6 @@ services:
       PMA_HOST: my_1_db  
       PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: root       
-      # PMA_USER: ${DB_USERNAME:-user} # Opcional: Si quieres que phpMyAdmin use un usuario específico para iniciar sesión
-      # PMA_PASSWORD: ${DB_PASSWORD:-password} # Opcional: Contraseña para el usuario PMA_USER
     networks:
         - my_1_network
 
