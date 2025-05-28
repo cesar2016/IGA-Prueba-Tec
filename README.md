@@ -29,7 +29,7 @@
         password: admin1234
 
 
-# 3 Accesos al E-Comerce - Login - 
+# 4 Datos de accesos al E-Comerce - Login - 
     El login solo esta simulado con el siguiente objeto de usuarios utilizando el localStorage del  Navegador para poder mostrar la viste de usuarios y de administrador
 
     const simulatedUsers = [
