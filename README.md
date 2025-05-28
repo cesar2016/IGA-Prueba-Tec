@@ -21,7 +21,7 @@
 
 # 3 Ingresar desde el navegador
     Frontend: http://localhost:3001
-    backend: http://localhost:9200/api
+    Backend: http://localhost:9200/api
 
     
     phpmyadmin: http://localhost:9300
@@ -29,7 +29,7 @@
         password: admin1234
 
 
-# 3 Ingresar desde el navegador
+# 3 Accesos al E-Comerce - Login - 
     El login solo esta simulado con el siguiente objeto de usuarios utilizando el localStorage del  Navegador para poder mostrar la viste de usuarios y de administrador
 
     const simulatedUsers = [
@@ -41,9 +41,8 @@
             { id: 1, email: 'test5@test.com', password: 'test1234', username: 'Ro Talu', role: 'user' }, //
     ];
 
-- El proyecto de backend esta generado con composer en laravel-lumen y se encuentra en /api
-- El proyecto de frontend esta generado con node.js y React en /front
-
+- El proyecto de backend esta generado con composer en laravel 10 y se encuentra en el directorio /api
+- El proyecto de frontend esta generado con node.js y React en el directorio /front
 
 
 ## AUTOR
