@@ -4,10 +4,10 @@
 
 ## Intrucciones para levantar el Entorno
 
-# 1 colonar repositorio desde
+# 1 Colonar repositorio desde
     URL: https://github.com/cesar2016/Docker_Laravel_React_MySQL_and_phpmyadmin
 
-# 2 desde la raiz ejecutar
+# 2 Desde la raiz ejecutar
     sudo docker-compose up -d #levanta todos los contenedores
 
     // Dentro de api
