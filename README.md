@@ -1,6 +1,11 @@
 
 - La finalidad de este repositorio es, poder levantar con unos pocos comandos de consola, un stack con lo necesario para trabajar con:
-# React | Laravel | MySQL | PhpMyadmin | Server Apache
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+  <img src="https://chuda.me/wp-content/uploads/2022/09/lampp.jpg" alt="LAMPP" width="200" style="margin: 5px;">
+  <img src="https://miro.medium.com/v2/resize:fit:522/0*Hdm7hBTZ-hKlbtlV.png" alt="Node.js" width="200" style="margin: 5px;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnhfAMgG_6ps9Hs_2NjmJ5pgskwlhFAQyv7g&s" alt="React" width="200" style="margin: 5px;">
+  <img src="https://i.pinimg.com/736x/8b/81/38/8b8138c4491769dd53c5dc09b6548ecf.jpg" alt="Laravel" width="200" style="margin: 5px;">
+</div>
 
 ## Intrucciones para levantar el Entorno
 
